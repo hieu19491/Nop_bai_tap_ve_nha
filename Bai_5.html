@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Tính diện tích và Chu vi hình chữ nhật</h3>
+<input type="text" id="chieudai" placeholder="Nhập chiều dài: cm">
+<input type="text" id="chieurong" placeholder="Nhập chiều rộng: cm">
+<button onclick="ketqua()"> Hiển thị kết quả</button>
+<script>
+    function ketqua() {
+        let a = document.getElementById("chieudai").value;
+        let b = document.getElementById("chieurong").value;
+        let Dientich = "Diện tích = " + (a * b) + "cm<sup>2</sup>";
+        let Chuvi = "Chu vi = " + (2 * (a + b)) + "cm";
+        document.getElementById("Dientich").innerHTML = Dientich;
+        document.getElementById("Chuvi").innerHTML = Chuvi;
+    }
+</script>
+<p id="Dientich"></p>
+<p id="Chuvi"></p>
+
+
+
+</body>
+</html>

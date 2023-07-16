@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="so1" placeholder="Nhập số a">
+<input type="text" id="so2" placeholder="Nhập số b">
+<button onclick="Kiemtra()">Kiểm tra</button>
+<script>
+  function Kiemtra() {
+    let a = document.getElementById("so1").value;
+    let b = document.getElementById("so2").value;
+    let ketqua;
+
+    if (a == b) {
+      ketqua = "Hai số bằng nhau";
+    }
+    else if (a > b) {
+      ketqua = "a lớn hơn b" + "; a khác b";
+    }
+    else if (a < b) {
+      ketqua = "a nhỏ hơn b" + "; a khác b" ;
+    }
+
+    document.getElementById("ketqua").innerHTML = ketqua;
+  }
+</script>
+
+<p id="ketqua"></p>
+
+</body>
+</html>

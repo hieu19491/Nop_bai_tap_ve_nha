@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="name" placeholder="Nhập tên của bạn">
+<button onclick="Hienten()">Hiển thị ra màn hình</button>
+<script>
+    function Hienten() {
+        let a = document.getElementById("name").value;
+        let ten;
+        ten = a;
+        document.getElementById("ten").innerHTML = ten;
+    }
+</script>
+<p id="ten" style="color: blue"></p>
+
+</body>
+</html>
