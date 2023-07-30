@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h3>Nhập chuỗi</h3>
+<input type="text" id="chuoi">
+<button onclick="thayThe()">Đổi ký tự</button>
+<p id="check"></p>
+
+<script>
+    function thayThe() {
+        let a = document.getElementById("chuoi").value;
+        let arr = a.split("");
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === "-") {
+                arr[i] = "_";
+            }
+        }
+        document.getElementById("check").innerHTML = arr.join('');
+    }
+
+</script>
+
+</body>
+</html>
+
+function tich(a,b){
+alert(a * b)
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h3>Nhập chuỗi muốn đếm</h3>
+<input type="text" id="chuoi">
+<button onclick="dem()" >Đếm ký tự</button>
+<p id="check"></p>
+
+<script>
+    function dem() {
+        let a = document.getElementById("chuoi").value;
+        let arr = a.split("");
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if ( arr[i] === " "){
+                continue;
+            }
+            count++;
+        }
+        document.getElementById("check").innerHTML = `Tổng số ký tự trong chuỗi là: ${count}`;
+    }
+
+</script>
+
+
+</body>
+</html>

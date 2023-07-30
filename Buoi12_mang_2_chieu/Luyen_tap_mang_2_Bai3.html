@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="number" placeholder="Nhập giá các giá trị vào mảng: ">
+<button onclick="them()">Thêm giá trị vào mảng</button>
+
+<form action="">
+    <p>Độ dài của mảng : <input type="text" id="number1" style="width: 30px"></p>
+</form>
+
+<button onclick="count()">Đếm số phần tử trong mảng</button>
+<p id="mang"></p>
+<p id="check"></p>
+<script>
+    let arr = [];
+
+    function them() {
+        arr.push(+document.getElementById("number").value);
+        let a = +document.getElementById("number1").value;
+        if (arr.length > a) {
+            arr.pop();
+            document.getElementById("check").innerHTML = "Đã quá giới hạn độ dài của mảng";
+        }
+        document.getElementById("mang").innerHTML = arr
+    }
+
+    function count() {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            count++;
+        }
+        document.getElementById("check").innerHTML = "Số phần tử trong mảng = " + count;
+    }
+</script>
+
+</body>
+</html>

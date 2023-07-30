@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let arr = [
+    [1, 3, 4],
+    [3, 4, 5],
+    [5, 5, 6]
+  ];
+
+  for (let i = 0; i < arr.length; i++) {
+    let iMax = arr[0][i];
+    for (let j = 0; j < arr[i].length; j++) {
+      if( iMax < arr[j][i]){
+        iMax = arr[j][i];
+      }
+    }
+    document.write(iMax + "<br>")
+  }
+</script>
+
+</body>
+</html>
