@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Add Products</h1>
+<input type="text" id="add">
+<button onclick="addProduct()">Add</button>
+<p>List Products</p>
+
+
+<table id="displayArea" border="1">
+
+</table>
+
+<script>
+    let listProduct = ["Táo hữu cơ Diva", "Táo hữu cơ KORU", "Táo Ambrosia", "Táo Queen NZ", "Táo Nam Phi", "Ổi Lê Di Trạch", "Chanh leo tím"];
+    displayAll();
+
+    function displayAll() {
+        let str = "<tr>" +
+            "<td>Product Name</td>" +
+            "<td></td>" +
+            "<td>" + listProduct.length + "products </td>" +
+            "</tr>";
+        for (let i = 0; i < listProduct.length; i++) {
+            str += "<tr>" +
+                "<td>" + listProduct[i] + "</td>" +
+                "<td><button onclick='showFormEdit(" + i + ")'>Edit</button></td>" +
+                "<td><button onclick='deleteProduct(" + i + ")'>Delete</button></td>" +
+                "</tr>"
+        }
+        document.getElementById("displayArea").innerText = str;
+    }
+
+    function addProduct(names) {
+        let productName = document.getElementById("add").value;
+        document.getElementById("add").value = "";
+        listProduct.push(productName);
+        displayAll();
+    }
+    
+    function deleteProduct(inDex){
+        listProduct.splice(inDex, 1);
+        displayAll();
+    }
+    
+    function showFormEdit(inDex){
+        let str = "";
+        str = '<input type="text" id= "editProduct" value="' + listProduct[inDex] +'"><button onclick="saveProduct('+ inDex +')">Save</button>';
+        document.getElementById("edit").innerText = str;
+    }
+
+    function saveProduct(inDex){
+        listProduct[inDex] = document.getElementById("editProduct").value;
+        document.getElementById("edit").innerText = "";
+        displayAll();
+    }
+
+
+</script>
+
+</body>
+</html>

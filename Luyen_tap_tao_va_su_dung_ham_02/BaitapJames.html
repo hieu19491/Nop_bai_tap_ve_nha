@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Tính bình phương một số bất kỳ
+    function tinhBinhphuong(x) {
+        return Math.pow(x, 2)
+    }
+
+    //Tính diện tích, chu vi hình tròn
+
+    function tinhDientich(x) {
+        const PI = 3.14;
+        return PI * tinhBinhphuong(x);
+    }
+
+    function tinhChuvi(x) {
+        let duongKinh = x;
+        const PI = 3.14;
+        return PI * x;
+    }
+
+    //Tính giai thừa của một số nguyên
+    function tinhGiaithua(x) {
+        let giaiThua = 1;
+        for (let i = 1; i <= x; i++) {
+            giaiThua = giaiThua * i;
+        }
+        return giaiThua;
+    }
+
+    //Kiểm tra ký tự nhập vào có phải số hay không
+    function kiemTraSo(x) {
+        if (!isNaN(x)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //nhập vào 3 số bất kỳ, trả về số nguyên có giá trị nhỏ nhất
+    function traVeSoNguyenNhoNhat(a, b, c) {
+        if (a > b && a > c) {
+            return a;
+        } else if (a < b && b > c) {
+            return b;
+        } else {
+            return c;
+        }
+    }
+
+    // Kiểm tra số nguyên dương
+    function kiemTraSoNguyenDuong(x) {
+        if (x > 0) {
+            return true;
+        } else if (x === 0) {
+            return "Số này không phải số nguyên âm, không phải số nguyên dương"
+        } else {
+            return false;
+        }
+    }
+
+
+    //Đổi chỗ 2 số nguyên
+    function doiCho(a, b) {
+        let temp = a;
+        a = b;
+        b = temp;
+        alert(`a là ${a} và b là ${b}`)
+
+    }
+
+    //Đảo ngược mảng số nguyên
+    function daoNguocSoNguyen(arr) {
+        arr.reverse()
+        return arr
+    }
+
+    //Kiểm tra số bất kỳ
+    function kiemTraKyTu(str, x) {
+        str.slice("");
+        let count = 0;
+        let flag = false;
+        for (let i = 0; i < str.length; i++) {
+            if (x === str[i]) {
+                count++;
+                flag = true;
+            }
+        }
+        if (!flag) {
+            return "-1";
+        }
+        return count;
+    }
+
+
+
+
+</script>
+
+</body>
+</html>
