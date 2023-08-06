@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hình chữ nhật</title>
+</head>
+<body>
+<script>
+  class Rectangle{
+    chieudai;
+    chieurong;
+    S;
+    P;
+    constructor(chieudaiInput, chieurongInput) {
+      this.chieudai = chieudaiInput;
+      this.chieurong = chieurongInput;
+    }
+    getChieudai(){
+      return this.chieudai;
+    }
+    getChieurong(){
+      return this.chieurong;
+    }
+    setChieudai(chieudaiInput){
+      this.chieudai = chieudaiInput;
+    }
+    setChieurong(chieurongInput){
+      this.chieurong = chieurongInput;
+    }
+
+    getDientich(){
+        this.S = this.chieudai * this.chieurong;
+      return;
+    }
+
+    getChuvi(){
+        this.P = (this.chieudai + this.chieurong) * 2;
+      return;
+    }
+
+    getInfo(){
+        return `Chiều dài = ${this.chieudai}, Chiều rộng = ${this.chieurong} `
+    }
+  }
+
+  function main(){
+    let hinhChuNhat = new Rectangle(4,5)
+    // document.write(hinhChuNhat.getDientich() + "<br>")
+    // document.write(hinhChuNhat.getChuvi())
+
+      // hinhChuNhat.setChieudai(8);
+      // alert(hinhChuNhat.getChieudai())
+      document.write(hinhChuNhat.getInfo())
+  }
+  main()
+</script>
+
+</body>
+</html>

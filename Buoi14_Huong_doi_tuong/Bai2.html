@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  class Temperature {
+    doC;
+    constructor(doCInput, doFInput) {
+      this.doC = doCInput;
+    }
+
+    getdoC(){
+      return this.doC;
+    }
+
+    setdoC(doCInput){
+      this.doC = doCInput;
+    }
+
+    chuyendoF(){
+      return `${(this.doC * 1.8) + 32} độ F`;
+    }
+    chuyendoK(){
+      return `${this.doC + 273.15} độ K`;
+    }
+  }
+
+  function main() {
+    let doC = new Temperature(25)
+    document.write(doC.chuyendoF() + "<br>")
+    document.write(doC.chuyendoK() + "<br>")
+      }
+ main()
+</script>
+
+</body>
+</html>
