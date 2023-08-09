@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Kind {
+        nameKind;
+        featherColor;
+
+        constructor(nameKindInput, featherColorInput) {
+            this.nameKind = nameKindInput;
+            this.featherColor = featherColorInput;
+        }
+
+        getNameKind() {
+            return this.nameKind;
+        }
+
+        getFeatherColor() {
+            return this.featherColor;
+        }
+
+        setNameKind(nameKindInput) {
+            this.nameKind = nameKindInput;
+        }
+
+        setFeatherColor(featherColorInput) {
+            this.featherColor = featherColorInput;
+        }
+    }
+
+    class Dog {
+        nameDog;
+        age;
+        kindDog;
+        isSick;
+
+        constructor(nameDogInput, ageInput, kindDogInput, isSickInput) {
+            this.nameDog = nameDogInput;
+            this.age = ageInput;
+            this.kindDog = kindDogInput;
+            this.isSick = isSickInput;
+        }
+
+        getNameDog() {
+            return this.nameDog;
+        }
+
+        getAge() {
+            return this.age;
+        }
+
+        getKindDog() {
+            return this.kindDog;
+        }
+
+        getIsSick() {
+            return this.isSick;
+        }
+
+        setNameDog(nameDogInput){
+            this.nameDog = nameDogInput;
+        }
+        setAge(ageInput){
+            this.age = ageInput;
+        }
+        setKindDog(kindDogInput){
+            this.kindDog = kindDogInput;
+        }
+        setIsSick(isSickInput){
+            this.isSick = isSickInput;
+        }
+
+        check(){
+            if(this.isSick) {
+                alert(`Tên ${this.nameDog}, Tuổi ${this.age}, Tình trạng sức khỏe : Tốt`);
+            } else  {
+                alert(`Tên ${this.nameDog}, Tuổi ${this.age}, Tình trạng sức khỏe : Đang ốm`)
+            }
+        }
+    }
+
+    function main(){
+        let kind1 = new Kind("Pug","Ghi")
+        let kind2 = new Kind("Husky", "Đen")
+        let dog1 = new Dog("Xù", 2, kind1, true)
+        dog1.check();
+        let dog2 = new Dog("Xù2", 3, kind2, false);
+        dog2.check();
+    }
+    main()
+</script>
+
+</body>
+</html>

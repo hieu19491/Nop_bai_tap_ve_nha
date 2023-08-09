@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+
+  class ElectricLamp{
+    status;
+    constructor(statusInput) {
+      this.status = statusInput;
+    }
+    getStatus(){
+      return this.status;
+    }
+    setStatus(statusInput){
+      this.status = statusInput;
+    }
+
+    turnOff(){
+      return "OFF";
+    }
+    turnOn(){
+      return  "ON";
+    }
+
+  }
+
+  class SwitchButton{
+    lamp;
+    status;
+    constructor(lampInput, statusInput) {
+      this.lamp = lampInput;
+      this.status = statusInput ;
+    }
+    getLamp(){
+      return this.lamp;
+    }
+
+    setLamp(lamp){
+      this.lamp = lamp;
+    }
+
+    connectToLamp(Electriclamp){
+      document.getElementById("result").innerHTML = `This lamp is conneted`;
+    }
+
+    switchOff(){
+      this.status = "light is off";
+      document.write(this.status + "<br>");
+      return this.status;
+    }
+
+    switchOn(){
+      this.status = "light is on";
+      document.write(this.status + "<br>") ;
+      return this.status;
+    }
+  }
+
+  function main(){
+    let electricLamp_1 = new ElectricLamp(false);
+
+    let button_1 = new SwitchButton(electricLamp_1,false); // kết nối giữa  công tắc 1 và đèn 1
+
+    button_1.connectToLamp(electricLamp_1);
+    console.log(button_1)
+    button_1.switchOn();
+    button_1.switchOff();
+    button_1.switchOn();
+    button_1.switchOff();
+    button_1.switchOn();
+    button_1.switchOff();
+    button_1.switchOn();
+    button_1.switchOff();
+    button_1.switchOn();
+    button_1.switchOff();
+    button_1.switchOn();
+    button_1.switchOff();
+    button_1.switchOn();
+    button_1.switchOff();
+    button_1.switchOn();
+    button_1.switchOff();
+    button_1.switchOn();
+    button_1.switchOff();
+    button_1.switchOn();
+    button_1.switchOff();
+    button_1.switchOn();
+  }
+  main()
+
+</script>
+</body>
+</html>

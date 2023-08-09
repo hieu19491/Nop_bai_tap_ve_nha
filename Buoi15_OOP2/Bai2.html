@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1" style="text-align: center">
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Quality</td>
+        <td>Price</td>
+    </tr>
+    <tbody id="list">
+
+    </tbody>
+    <div id="edit">
+
+    </div>
+</table>
+<script>
+    class Product {
+        iD;
+        name;
+        quality;
+        price;
+
+        constructor(iDInput, nameInput, qualityInput, priceInput) {
+            this.iD = iDInput;
+            this.name = nameInput;
+            this.quality = qualityInput;
+            this.price = priceInput;
+        }
+
+        getIdInput() {
+            return this.iD;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        getQuality() {
+            return this.quality;
+        }
+
+        getPrice() {
+            return this.price;
+        }
+
+        setIdInput(iDInput) {
+            this.iD = iDInput;
+        }
+
+        setName(nameInput) {
+            this.name = nameInput;
+        }
+
+        setQuality(qualityInput) {
+            this.quality = qualityInput;
+        }
+
+        setPrice(priceInput) {
+            this.price = priceInput;
+        }
+    }
+
+    class Store {
+        listProducts;
+
+        constructor() {
+            this.listProducts = [];
+
+        }
+
+        findAll() {
+            return this.listProducts;
+        }
+
+        add(newProduct) {
+            this.listProducts.push(newProduct);
+        }
+
+        remove(index) {
+            this.listProducts.splice(index, 1);
+        }
+
+        edit(index, newProduct) {
+            this.listProducts[index] = newProduct;
+        }
+
+        showFormedit(index) {
+
+        }
+
+    }
+
+    function main() {
+        let store = new Store("Phúc Anh");
+        let product1 = new Product(1, "Laptop", 5, 10000000);
+        store.add(product1);
+
+        let product2 = new Product(2, "Bàn phím", 10, 200000);
+        store.add(product2);
+
+        let product3 = new Product(3, "Chuột", 10, 100000);
+        store.add(product3);
+
+        let product4 = new Product(4, "Màn hình", 10, 50000000);
+        store.add(product4);
+
+        let product5 = new Product(5, "Tai nghe", 5, 500000);
+        store.add(product5);
+
+        store.remove(3);
+        let product6 = new Product(6, "Đế tản nhiệt", 10, 150000);
+        store.edit(3, product6);
+
+
+        let list = store.findAll();
+        let str = '';
+        for (let i = 0; i < list.length; i++) {
+            str += ` <tr>
+            <td style="text-align: center">${list[i].iD}</td>
+            <td style="text-align: left">${list[i].name}</td>
+            <td style="text-align: center">${list[i].quality}</td>
+            <td style="text-align: left">${list[i].price}</td>
+        </tr>`
+            if ( list[i].price > 2000){
+                document.write(list[i].getName() + "<br>");
+                document.write(list[i].getIdInput() + "<br>");
+                document.write(list[i].getQuality() + "<br>");
+            }else {
+                alert("Không có sản phẩm nào dưới 2000")
+            }
+        }
+        document.getElementById("list").innerHTML = str;
+
+    }
+
+
+    main()
+
+
+</script>
+
+</body>
+</html>
